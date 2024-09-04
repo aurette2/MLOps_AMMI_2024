@@ -9,6 +9,8 @@ def load_and_display_iris():
 
     print(data_df.head())
 
+    return data_df
+
 if __name__ == "__main__":
     load_and_display_iris()
 
