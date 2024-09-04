@@ -7,6 +7,7 @@ def load_and_display_iris(data):
     data_df['target'] = data.target
 
     print(data_df.head())
+    return data_df
 
     return data_df
 
