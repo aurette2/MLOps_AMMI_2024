@@ -2,3 +2,11 @@
 .DS_Store
 __pycache__/
 log/*.log
+day1/.DS_Store
+day2/.DS_Store
+day1/env/
+day2/env/
+day2/localRemote/
+day2/mlruns/
+day2/mlartifacts/
+day2/.dvc/
