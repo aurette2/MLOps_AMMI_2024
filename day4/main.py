@@ -27,10 +27,10 @@ async def lifespan(app: FastAPI):
 
 
 class IrisFeatures(BaseModel):
-    sepal_length: float # confloat(gt=0, le=10.0) = Field(..., description="Sepal length in cm (0 < value ≤ 10)")
-    sepal_width: float # confloat(gt=0, le=5.0) = Field(..., description="Sepal width in cm (0 < value ≤ 5)")
-    petal_length: float # confloat(gt=0, le=7.0) = Field(..., description="Petal length in cm (0 < value ≤ 7)")
-    petal_width: float # confloat(gt=0, le=3.0) = Field(..., description="Petal width in cm (0 < value ≤ 3)")
+    sepal_length: confloat(gt=0, le=10.0) = Field(..., description="Sepal length in cm (0 < value ≤ 10)")
+    sepal_width: confloat(gt=0, le=5.0) = Field(..., description="Sepal width in cm (0 < value ≤ 5)")
+    petal_length: confloat(gt=0, le=7.0) = Field(..., description="Petal length in cm (0 < value ≤ 7)")
+    petal_width: confloat(gt=0, le=3.0) = Field(..., description="Petal width in cm (0 < value ≤ 3)")
 
     class Config:
         schema_extra = {
