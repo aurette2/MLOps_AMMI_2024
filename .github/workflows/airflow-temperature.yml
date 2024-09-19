@@ -1,0 +1,19 @@
+name: Airflow Temperature Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      temperature:
+        description: 'Temperature data passed from Airflow'
+        required: true
+
+jobs:
+  echo-temperature:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Echo temperature
+        run: echo "Temperature from Airflow:${{ github.event.inputs.temperature }}"
