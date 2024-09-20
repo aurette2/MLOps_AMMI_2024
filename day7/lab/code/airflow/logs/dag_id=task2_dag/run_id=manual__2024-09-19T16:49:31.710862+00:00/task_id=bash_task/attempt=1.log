@@ -1,0 +1,28 @@
+[2024-09-19 16:51:25,910] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: task2_dag.bash_task manual__2024-09-19T16:49:31.710862+00:00 [queued]>
+[2024-09-19 16:51:25,912] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: task2_dag.bash_task manual__2024-09-19T16:49:31.710862+00:00 [queued]>
+[2024-09-19 16:51:25,912] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:51:25,912] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2024-09-19 16:51:25,912] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:51:25,916] {taskinstance.py:1397} INFO - Executing <Task(BashOperator): bash_task> on 2024-09-19 16:49:31.710862+00:00
+[2024-09-19 16:51:25,918] {standard_task_runner.py:52} INFO - Started process 60979 to run task
+[2024-09-19 16:51:25,920] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'task2_dag', 'bash_task', 'manual__2024-09-19T16:49:31.710862+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/task2.py', '--cfg-path', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmpjkr5hsvs', '--error-file', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmps83j5616']
+[2024-09-19 16:51:25,920] {standard_task_runner.py:80} INFO - Job 16: Subtask bash_task
+[2024-09-19 16:51:30,936] {task_command.py:371} INFO - Running <TaskInstance: task2_dag.bash_task manual__2024-09-19T16:49:31.710862+00:00 [running]> on host MBPdeCharmaine
+[2024-09-19 16:51:35,954] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=task2_dag
+AIRFLOW_CTX_TASK_ID=bash_task
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-19T16:49:31.710862+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-09-19T16:49:31.710862+00:00
+[2024-09-19 16:51:35,954] {subprocess.py:62} INFO - Tmp dir root location: 
+ /var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T
+[2024-09-19 16:51:35,955] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'echo "Running Bash task"']
+[2024-09-19 16:51:35,957] {subprocess.py:85} INFO - Output:
+[2024-09-19 16:51:35,960] {subprocess.py:92} INFO - Running Bash task
+[2024-09-19 16:51:35,961] {subprocess.py:96} INFO - Command exited with return code 0
+[2024-09-19 16:51:35,967] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=task2_dag, task_id=bash_task, execution_date=20240919T164931, start_date=20240919T165125, end_date=20240919T165135
+[2024-09-19 16:51:35,982] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-19 16:51:35,988] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

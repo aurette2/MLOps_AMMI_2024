@@ -1,0 +1,32 @@
+[2024-09-19 16:32:27,150] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: fetch_process_save_weather_data_with_github.trigger_github_workflow manual__2024-09-19T16:31:17.623799+00:00 [queued]>
+[2024-09-19 16:32:27,153] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: fetch_process_save_weather_data_with_github.trigger_github_workflow manual__2024-09-19T16:31:17.623799+00:00 [queued]>
+[2024-09-19 16:32:27,153] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:32:27,153] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2024-09-19 16:32:27,153] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:32:27,157] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): trigger_github_workflow> on 2024-09-19 16:31:17.623799+00:00
+[2024-09-19 16:32:27,159] {standard_task_runner.py:52} INFO - Started process 57947 to run task
+[2024-09-19 16:32:27,162] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'fetch_process_save_weather_data_with_github', 'trigger_github_workflow', 'manual__2024-09-19T16:31:17.623799+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/part3.py', '--cfg-path', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmpy9cv_0f3', '--error-file', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmpxkhd6wpu']
+[2024-09-19 16:32:27,163] {standard_task_runner.py:80} INFO - Job 7: Subtask trigger_github_workflow
+[2024-09-19 16:32:32,178] {task_command.py:371} INFO - Running <TaskInstance: fetch_process_save_weather_data_with_github.trigger_github_workflow manual__2024-09-19T16:31:17.623799+00:00 [running]> on host MBPdeCharmaine
+[2024-09-19 16:32:37,196] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=fetch_process_save_weather_data_with_github
+AIRFLOW_CTX_TASK_ID=trigger_github_workflow
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-19T16:31:17.623799+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-09-19T16:31:17.623799+00:00
+[2024-09-19 16:32:37,736] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/Users/charme/Documents/Gitub_Repositories/MLOps_AMMI_2024/day7/lab/code/.venv/lib/python3.10/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/Users/charme/Documents/Gitub_Repositories/MLOps_AMMI_2024/day7/lab/code/.venv/lib/python3.10/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/Users/charme/Documents/Gitub_Repositories/MLOps_AMMI_2024/day7/lab/code/airflow/dags/part3.py", line 72, in trigger_github_workflow
+    raise Exception(f"Failed to trigger GitHub workflow: {response.status_code}, {response.text}")
+Exception: Failed to trigger GitHub workflow: 401, {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+[2024-09-19 16:32:37,739] {taskinstance.py:1415} INFO - Marking task as UP_FOR_RETRY. dag_id=fetch_process_save_weather_data_with_github, task_id=trigger_github_workflow, execution_date=20240919T163117, start_date=20240919T163227, end_date=20240919T163237
+[2024-09-19 16:32:37,742] {standard_task_runner.py:92} ERROR - Failed to execute job 7 for task trigger_github_workflow (Failed to trigger GitHub workflow: 401, {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}; 57947)
+[2024-09-19 16:32:37,761] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-09-19 16:32:37,765] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

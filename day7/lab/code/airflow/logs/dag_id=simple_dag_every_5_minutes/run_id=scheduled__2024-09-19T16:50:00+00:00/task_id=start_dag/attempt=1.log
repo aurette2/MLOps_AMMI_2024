@@ -1,0 +1,24 @@
+[2024-09-19 16:59:10,841] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: simple_dag_every_5_minutes.start_dag scheduled__2024-09-19T16:50:00+00:00 [queued]>
+[2024-09-19 16:59:10,843] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: simple_dag_every_5_minutes.start_dag scheduled__2024-09-19T16:50:00+00:00 [queued]>
+[2024-09-19 16:59:10,843] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:59:10,843] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2024-09-19 16:59:10,843] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:59:10,847] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): start_dag> on 2024-09-19 16:50:00+00:00
+[2024-09-19 16:59:10,849] {standard_task_runner.py:52} INFO - Started process 62070 to run task
+[2024-09-19 16:59:10,852] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'simple_dag_every_5_minutes', 'start_dag', 'scheduled__2024-09-19T16:50:00+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/task3.py', '--cfg-path', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmpl0s8fb1o', '--error-file', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmpfbek2z57']
+[2024-09-19 16:59:10,852] {standard_task_runner.py:80} INFO - Job 34: Subtask start_dag
+[2024-09-19 16:59:15,868] {task_command.py:371} INFO - Running <TaskInstance: simple_dag_every_5_minutes.start_dag scheduled__2024-09-19T16:50:00+00:00 [running]> on host MBPdeCharmaine
+[2024-09-19 16:59:20,887] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=simple_dag_every_5_minutes
+AIRFLOW_CTX_TASK_ID=start_dag
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-19T16:50:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-09-19T16:50:00+00:00
+[2024-09-19 16:59:20,887] {logging_mixin.py:115} INFO - Starting Airflow DAG
+[2024-09-19 16:59:20,888] {python.py:173} INFO - Done. Returned value was: None
+[2024-09-19 16:59:20,891] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=simple_dag_every_5_minutes, task_id=start_dag, execution_date=20240919T165000, start_date=20240919T165910, end_date=20240919T165920
+[2024-09-19 16:59:20,902] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-19 16:59:20,908] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,25 @@
+[2024-09-19 16:31:34,213] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: fetch_process_save_weather_data_with_github.fetch_weather_data manual__2024-09-19T16:31:17.623799+00:00 [queued]>
+[2024-09-19 16:31:34,215] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: fetch_process_save_weather_data_with_github.fetch_weather_data manual__2024-09-19T16:31:17.623799+00:00 [queued]>
+[2024-09-19 16:31:34,215] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:31:34,215] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2024-09-19 16:31:34,215] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:31:34,219] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): fetch_weather_data> on 2024-09-19 16:31:17.623799+00:00
+[2024-09-19 16:31:34,221] {standard_task_runner.py:52} INFO - Started process 57802 to run task
+[2024-09-19 16:31:34,224] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'fetch_process_save_weather_data_with_github', 'fetch_weather_data', 'manual__2024-09-19T16:31:17.623799+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/part3.py', '--cfg-path', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmpjg4bwsjh', '--error-file', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmpnhwiuyuu']
+[2024-09-19 16:31:34,224] {standard_task_runner.py:80} INFO - Job 5: Subtask fetch_weather_data
+[2024-09-19 16:31:39,238] {task_command.py:371} INFO - Running <TaskInstance: fetch_process_save_weather_data_with_github.fetch_weather_data manual__2024-09-19T16:31:17.623799+00:00 [running]> on host MBPdeCharmaine
+[2024-09-19 16:31:44,257] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=fetch_process_save_weather_data_with_github
+AIRFLOW_CTX_TASK_ID=fetch_weather_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-19T16:31:17.623799+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-09-19T16:31:17.623799+00:00
+[2024-09-19 16:31:44,257] {logging_mixin.py:115} INFO - here1
+[2024-09-19 16:31:45,330] {part3.py:38} INFO - Fetched temperature: 27.6
+[2024-09-19 16:31:45,333] {python.py:173} INFO - Done. Returned value was: None
+[2024-09-19 16:31:45,335] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=fetch_process_save_weather_data_with_github, task_id=fetch_weather_data, execution_date=20240919T163117, start_date=20240919T163134, end_date=20240919T163145
+[2024-09-19 16:31:45,347] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-19 16:31:45,353] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

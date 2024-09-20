@@ -6,6 +6,7 @@ on:
       temperature:
         description: 'Temperature data passed from Airflow'
         required: true
+        default: "25"
 
 jobs:
   echo-temperature:

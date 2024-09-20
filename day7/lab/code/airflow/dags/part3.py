@@ -1,6 +1,7 @@
 import requests
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+from airflow.models import Variable
 from datetime import datetime
 import logging
 import os
@@ -8,7 +9,7 @@ import os
 # Define default arguments
 default_args = {
     'owner': 'airflow',
-    'start_date': datetime(2023, 9, 18),
+    'start_date': datetime(2023, 9, 19),
     'retries': 1
 }
 
@@ -21,7 +22,7 @@ dag = DAG(
 )
 
 # Fetch the GitHub token from Airflow variables
-GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
+GITHUB_TOKEN = Variable.get("GITHUB_TOKEN")
 
 # GitHub repository details
 REPO = 'aurette2/MLOps_AMMI_2024'
@@ -29,6 +30,7 @@ WORKFLOW_ID = 'airflow-temperature.yml'
 
 # Fetch weather data task
 def fetch_weather_data(ti):
+    print("here1")
     url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/senegal?unitGroup=metric&key=DEDDS5V8SXABNH432KZVFBD9Y&contentType=json"
     response = requests.get(url)
     if response.status_code == 200:
@@ -57,10 +59,10 @@ def trigger_github_workflow(ti):
     }
     
     data = {
-        "ref": "main",  # Replace with the branch you want to trigger the workflow on
+        "ref": "main",
         "inputs": {
-            "temperature": str(temperature)
-        }
+        "temperature": str(temperature) 
+    }
     }
     
     response = requests.post(url, headers=headers, json=data)

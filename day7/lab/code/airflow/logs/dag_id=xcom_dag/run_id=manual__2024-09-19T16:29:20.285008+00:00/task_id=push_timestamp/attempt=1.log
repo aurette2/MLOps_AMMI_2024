@@ -1,0 +1,24 @@
+[2024-09-19 16:29:37,160] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: xcom_dag.push_timestamp manual__2024-09-19T16:29:20.285008+00:00 [queued]>
+[2024-09-19 16:29:37,162] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: xcom_dag.push_timestamp manual__2024-09-19T16:29:20.285008+00:00 [queued]>
+[2024-09-19 16:29:37,162] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:29:37,162] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2024-09-19 16:29:37,162] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:29:37,166] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): push_timestamp> on 2024-09-19 16:29:20.285008+00:00
+[2024-09-19 16:29:37,168] {standard_task_runner.py:52} INFO - Started process 57487 to run task
+[2024-09-19 16:29:37,170] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'xcom_dag', 'push_timestamp', 'manual__2024-09-19T16:29:20.285008+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/task4.py', '--cfg-path', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmpbminjk7k', '--error-file', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmp4rkgrd20']
+[2024-09-19 16:29:37,171] {standard_task_runner.py:80} INFO - Job 3: Subtask push_timestamp
+[2024-09-19 16:29:42,186] {task_command.py:371} INFO - Running <TaskInstance: xcom_dag.push_timestamp manual__2024-09-19T16:29:20.285008+00:00 [running]> on host MBPdeCharmaine
+[2024-09-19 16:29:47,205] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=xcom_dag
+AIRFLOW_CTX_TASK_ID=push_timestamp
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-19T16:29:20.285008+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-09-19T16:29:20.285008+00:00
+[2024-09-19 16:29:47,208] {task4.py:26} INFO - Pushed timestamp: 2024-09-19 16:29:47.205981
+[2024-09-19 16:29:47,208] {python.py:173} INFO - Done. Returned value was: None
+[2024-09-19 16:29:47,210] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=xcom_dag, task_id=push_timestamp, execution_date=20240919T162920, start_date=20240919T162937, end_date=20240919T162947
+[2024-09-19 16:29:47,224] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-19 16:29:47,230] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

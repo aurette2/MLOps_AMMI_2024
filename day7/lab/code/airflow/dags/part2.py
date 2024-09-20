@@ -2,6 +2,7 @@ import requests
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime
+import logging
 
 # Define default arguments
 default_args = {
@@ -21,6 +22,7 @@ def fetch_weather_data(ti):
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
+        logging.info(f"loading temperature ....")
         temperature = data['days'][0]['temp'] 
         ti.xcom_push(key='temperature', value=temperature)
     else:
@@ -30,12 +32,13 @@ def convert_temperature(ti):
     temperature = ti.xcom_pull(task_ids='fetch_weather_data', key='temperature')
     temperatureF = (temperature * 9/5) + 32
     ti.xcom_push(key='converted_temperature', value=temperatureF)
+    logging.info(f"temperature converted")
 
 def save_temperature_data(ti):
     temperature = ti.xcom_pull(task_ids='convert_temperature', key='converted_temperature')
     with open('./weather_data.txt', 'w') as file:
         file.write(f"The temperature in {CITY} is {temperature}°F")
-    print(f"Temperature data saved to file.")
+    logging.info(f"Temperature data saved to file.")
 
 # Define the DAG
 dag = DAG(
@@ -64,4 +67,5 @@ save_temperature_task = PythonOperator(
     dag=dag
 )
 
-fetch_weather_task >> convert_temperature_task >> save_temperature_task
+fetch_weather_task >> convert_temperature_task #>> save_temperature_task
+convert_temperature_task >> save_temperature_task

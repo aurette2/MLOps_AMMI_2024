@@ -1,0 +1,28 @@
+[2024-09-19 16:30:03,081] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: xcom_dag.bash_pull_timestamp manual__2024-09-19T16:29:20.285008+00:00 [queued]>
+[2024-09-19 16:30:03,084] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: xcom_dag.bash_pull_timestamp manual__2024-09-19T16:29:20.285008+00:00 [queued]>
+[2024-09-19 16:30:03,084] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:30:03,084] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2024-09-19 16:30:03,084] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:30:03,088] {taskinstance.py:1397} INFO - Executing <Task(BashOperator): bash_pull_timestamp> on 2024-09-19 16:29:20.285008+00:00
+[2024-09-19 16:30:03,090] {standard_task_runner.py:52} INFO - Started process 57552 to run task
+[2024-09-19 16:30:03,092] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'xcom_dag', 'bash_pull_timestamp', 'manual__2024-09-19T16:29:20.285008+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/task4.py', '--cfg-path', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmpe104myy_', '--error-file', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmpo8n0xk9t']
+[2024-09-19 16:30:03,093] {standard_task_runner.py:80} INFO - Job 4: Subtask bash_pull_timestamp
+[2024-09-19 16:30:08,106] {task_command.py:371} INFO - Running <TaskInstance: xcom_dag.bash_pull_timestamp manual__2024-09-19T16:29:20.285008+00:00 [running]> on host MBPdeCharmaine
+[2024-09-19 16:30:13,130] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=xcom_dag
+AIRFLOW_CTX_TASK_ID=bash_pull_timestamp
+AIRFLOW_CTX_EXECUTION_DATE=2024-09-19T16:29:20.285008+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-09-19T16:29:20.285008+00:00
+[2024-09-19 16:30:13,131] {subprocess.py:62} INFO - Tmp dir root location: 
+ /var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T
+[2024-09-19 16:30:13,131] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'echo "Pulled timestamp: 2024-09-19 16:29:47.205981"']
+[2024-09-19 16:30:13,134] {subprocess.py:85} INFO - Output:
+[2024-09-19 16:30:13,136] {subprocess.py:92} INFO - Pulled timestamp: 2024-09-19 16:29:47.205981
+[2024-09-19 16:30:13,136] {subprocess.py:96} INFO - Command exited with return code 0
+[2024-09-19 16:30:13,142] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=xcom_dag, task_id=bash_pull_timestamp, execution_date=20240919T162920, start_date=20240919T163003, end_date=20240919T163013
+[2024-09-19 16:30:13,169] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-19 16:30:13,176] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

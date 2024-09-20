@@ -1,0 +1,24 @@
+[2024-09-19 16:56:08,926] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: simple_dag_every_5_minutes.print_time scheduled__2023-09-18T00:10:00+00:00 [queued]>
+[2024-09-19 16:56:08,931] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: simple_dag_every_5_minutes.print_time scheduled__2023-09-18T00:10:00+00:00 [queued]>
+[2024-09-19 16:56:08,932] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:56:08,932] {taskinstance.py:1377} INFO - Starting attempt 1 of 2
+[2024-09-19 16:56:08,932] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-19 16:56:08,938] {taskinstance.py:1397} INFO - Executing <Task(PythonOperator): print_time> on 2023-09-18 00:10:00+00:00
+[2024-09-19 16:56:08,941] {standard_task_runner.py:52} INFO - Started process 61651 to run task
+[2024-09-19 16:56:08,944] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'simple_dag_every_5_minutes', 'print_time', 'scheduled__2023-09-18T00:10:00+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/task3.py', '--cfg-path', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmp4rqari1k', '--error-file', '/var/folders/ks/w6y0t6b552bdg88w8kq5g_xc0000gn/T/tmpdvi6tjct']
+[2024-09-19 16:56:08,949] {standard_task_runner.py:80} INFO - Job 27: Subtask print_time
+[2024-09-19 16:56:13,977] {task_command.py:371} INFO - Running <TaskInstance: simple_dag_every_5_minutes.print_time scheduled__2023-09-18T00:10:00+00:00 [running]> on host MBPdeCharmaine
+[2024-09-19 16:56:18,999] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=simple_dag_every_5_minutes
+AIRFLOW_CTX_TASK_ID=print_time
+AIRFLOW_CTX_EXECUTION_DATE=2023-09-18T00:10:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2023-09-18T00:10:00+00:00
+[2024-09-19 16:56:18,999] {logging_mixin.py:115} INFO - Current date and time: 2024-09-19 16:56:18.999860
+[2024-09-19 16:56:19,000] {python.py:173} INFO - Done. Returned value was: None
+[2024-09-19 16:56:19,002] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=simple_dag_every_5_minutes, task_id=print_time, execution_date=20230918T001000, start_date=20240919T165608, end_date=20240919T165619
+[2024-09-19 16:56:19,016] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-19 16:56:19,021] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
